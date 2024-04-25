@@ -29,8 +29,8 @@ const Products = () => {
     <Box p={5}>
       <Text fontSize="2xl" mb={4}>Our Products</Text>
       {products.map(product => (
-        <Flex key={product.id} p={5} shadow="md" borderWidth="1px" direction="column" mb={4}>
-          <Image borderRadius="md" src={product.image} alt={product.name} />
+        <Flex key={product.id} p={5} shadow="md" borderWidth="1px" direction={{ base: "column", md: "row" }} wrap="wrap" justify="center" align="center" mb={4}>
+          <Image borderRadius="md" src={product.image} alt={product.name} boxSize={{ base: "100%", sm: "80%", md: "60%" }} />
           <Text fontWeight="bold" mt={2}>{product.name}</Text>
           <Text>{product.description}</Text>
           <Text>${product.price}</Text>

@@ -29,8 +29,8 @@ const Index = () => {
 
   return (
     <Box p={5}>
-      <Flex justifyContent="space-between" mb={5}>
-        <Button as={Link} to="/">Home</Button>
+      <Flex justifyContent="space-between" wrap="wrap" mb={5}>
+        <Button size={{ base: "sm", md: "md", lg: "lg" }} as={Link} to="/">Home</Button>
         <Button as={Link} to="/products">Products</Button>
         <Button as={Link} to="/about">About Us</Button>
         <Flex align="center">
@@ -38,8 +38,8 @@ const Index = () => {
           <Text ml={2}>{cart.length}</Text>
         </Flex>
       </Flex>
-      <Heading as="h1" size="xl" textAlign="center" mb={6}>Welcome to Our Fashion Store</Heading>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
+      <Heading as="h1" size="xl" textAlign="center" mb={6} fontSize={{ base: "24px", md: "30px", lg: "36px" }}>Welcome to Our Fashion Store</Heading>
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
         {products.map(product => (
           <Box key={product.id} p={5} shadow="md" borderWidth="1px">
             <Image borderRadius="md" src={product.image} alt={product.name} />
