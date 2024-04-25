@@ -29,8 +29,8 @@ const Index = () => {
 
   return (
     <Box p={5}>
-      <Flex justifyContent="space-between" wrap="wrap" mb={5}>
-        <Button size={{ base: "sm", md: "md", lg: "lg" }} as={Link} to="/">Home</Button>
+      <Flex direction={{ base: "column", sm: "row" }} wrap="wrap" justifyContent="space-between" mb={5}>
+        
         <Button as={Link} to="/products">Products</Button>
         <Button as={Link} to="/about">About Us</Button>
         <Flex align="center">
@@ -39,6 +39,7 @@ const Index = () => {
         </Flex>
       </Flex>
       <Heading as="h1" size="xl" textAlign="center" mb={6} fontSize={{ base: "24px", md: "30px", lg: "36px" }}>Welcome to Our Fashion Store</Heading>
+      {/* Responsive grid layout for product display */}
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
         {products.map(product => (
           <Box key={product.id} p={5} shadow="md" borderWidth="1px">
