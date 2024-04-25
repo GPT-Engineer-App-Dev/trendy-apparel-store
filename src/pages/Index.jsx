@@ -1,4 +1,5 @@
-import { Box, Flex, Text, Button, Image, SimpleGrid, Heading, Link } from '@chakra-ui/react';
+import { Box, Flex, Text, Button, Image, SimpleGrid, Heading } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaShoppingCart } from 'react-icons/fa';
 
@@ -28,7 +29,7 @@ const Index = () => {
   return (
     <Box p={5}>
       <Box>
-        <Flex justifyContent="space-between" p={5}>
+        <Flex justifyContent="space-between" p={5} wrap="wrap" justify="center">
           <Link as={Button} to="/">Home</Link>
           <Link as={Button} to="/products">Products</Link>
           <Link as={Button} to="/about">About Us</Link>
