@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaShoppingCart } from 'react-icons/fa';
 
-const [cart, setCart] = useState([]);
+const Index = () => {
+  const [cart, setCart] = useState([]);
 const products = [
   {
     id: 1,
@@ -30,9 +31,9 @@ const Index = () => {
     <Box p={5}>
       <Box>
         <Flex justifyContent="space-between" p={5} wrap="wrap" justify="center">
-          <Link as={Button} to="/">Home</Link>
-          <Link as={Button} to="/products">Products</Link>
-          <Link as={Button} to="/about">About Us</Link>
+          <Button as={Link} to="/">Home</Button>
+          <Button as={Link} to="/products">Products</Button>
+          <Button as={Link} to="/about">About Us</Button>
           <Flex align="center">
             <FaShoppingCart />
             <Text ml={2}>{cart.length}</Text>
