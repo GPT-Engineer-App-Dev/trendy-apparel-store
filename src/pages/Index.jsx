@@ -1,6 +1,8 @@
-import { Box, Flex, Text, Button, Image, SimpleGrid, Heading } from '@chakra-ui/react';
+import { Box, Flex, Text, Button, Image, SimpleGrid, Heading, Link } from '@chakra-ui/react';
+import { useState } from "react";
 import { FaShoppingCart } from 'react-icons/fa';
 
+const [cart, setCart] = useState([]);
 const products = [
   {
     id: 1,
@@ -25,6 +27,17 @@ const products = [
 const Index = () => {
   return (
     <Box p={5}>
+      <Box>
+        <Flex justifyContent="space-between" p={5}>
+          <Link as={Button} to="/">Home</Link>
+          <Link as={Button} to="/products">Products</Link>
+          <Link as={Button} to="/about">About Us</Link>
+          <Flex align="center">
+            <FaShoppingCart />
+            <Text ml={2}>{cart.length}</Text>
+          </Flex>
+        </Flex>
+      </Box>
       <Heading as="h1" size="xl" textAlign="center" mb={6}>Welcome to Our Fashion Store</Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10}>
         {products.map(product => (
@@ -34,7 +47,7 @@ const Index = () => {
               <Text fontWeight="bold">{product.name}</Text>
               <Text>${product.price}</Text>
             </Flex>
-            <Button leftIcon={<FaShoppingCart />} colorScheme="blue" variant="solid" w="full" mt={2}>
+            <Button leftIcon={<FaShoppingCart />} colorScheme="blue" variant="solid" w="full" mt={2} onClick={() => setCart([...cart, product])}>
               Add to Cart
             </Button>
           </Box>
